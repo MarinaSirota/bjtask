@@ -53,7 +53,7 @@ class SiteController extends Controller
      */
     public function sort()
     {
-        $perPage = 5;
+        $perPage = 3;
         $sort=$_POST['sort'];
         $page= (int)(isset($_GET['page'])  ? ($_GET['page']) : 1);
         $model = Task::findAllLimit($page, $perPage, [$sort => 'ASC']);
