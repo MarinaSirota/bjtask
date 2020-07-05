@@ -39,7 +39,7 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $perPage = 5;
+        $perPage = 3;
         $page= (int)(isset($_GET['page'])  ? ($_GET['page']) : 1);
         $model = Task::findAllLimit($page, $perPage, ['status' => 'DESC']);
         $model['totalPages'] = ceil($model['totalRows'] / $perPage);
