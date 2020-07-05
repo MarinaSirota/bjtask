@@ -108,10 +108,10 @@
       <?php for ($i = 1; $i <= $model['totalPages']; $i++)
       {
           if ($i != $model['page']) {
-              echo " &nbsp <a href='?page=$i'>$i</a> &nbsp";
+              echo "&nbsp <a href='?page=$i'>$i</a> &nbsp";
 
           } else {
-              echo " $i";
+              echo "&nbsp $i &nbsp";
 
           }
       } ?>
