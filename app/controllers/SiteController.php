@@ -16,7 +16,7 @@ class SiteController extends Controller
      */
     protected $_rules = [
         'name'           =>'required',
-        'email'         =>'required, email',
+        'email'         =>'required,email',
     ];
 
     /**
@@ -40,23 +40,9 @@ class SiteController extends Controller
     public function index()
     {
         $perPage = 3;
-        $page= (int)(isset($_GET['page'])  ? ($_GET['page']) : 1);
-        $model = Task::findAllLimit($page, $perPage, ['status' => 'DESC']);
-        $model['totalPages'] = ceil($model['totalRows'] / $perPage);
-        $model['page'] = $page;
-
-        $this->view->render('index', 'Номе', $model );
-    }
-
-    /**
-     *Sort action
-     */
-    public function sort()
-    {
-        $perPage = 3;
-        $sort=$_POST['sort'];
-        $page= (int)(isset($_GET['page'])  ? ($_GET['page']) : 1);
-        $model = Task::findAllLimit($page, $perPage, [$sort => 'ASC']);
+        $page = (int)(isset($_GET['page'])  ? ($_GET['page']) : 1);
+        $sort = (isset($_GET['sort'])  ? ($_GET['sort']) : 'id');
+        $model = Task::findAllLimit($page, $perPage, [ $sort => 'ASC']);
         $model['totalPages'] = ceil($model['totalRows'] / $perPage);
         $model['page'] = $page;
 
@@ -84,7 +70,7 @@ class SiteController extends Controller
                 $model->status = 0;
                 if ($model->save())
                 {
-                    header('Location: /');
+                    $this->view->render('create_complete', 'create_complete', $validator);
                 }
             }
             else {

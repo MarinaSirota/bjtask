@@ -16,6 +16,7 @@ class Validation
         'gt' => 'greater',
         'lt' => 'less',
         'tel' => 'phone',
+        'email' => 'email'
     ];
     protected $_result = '';
 

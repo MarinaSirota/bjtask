@@ -8,35 +8,40 @@
   <table class="table table-striped table-bordered">
     <thead>
     <tr>
-      <th><form action="/site/sort" method="post">
+      <th>
+        <form action="?sort" method="get">
           <input type="hidden" name="sort" value="id">
           <button type="submit" title="Sort by ID">
             ID
           </button>
         </form>
       </th>
-      <th><form action="/site/sort" method="post">
+      <th>
+        <form action="?sort" method="get">
           <input type="hidden" name="sort" value="name">
           <button type="submit" title="Sort by Name" >
             Name
           </button>
         </form>
       </th>
-      <th><form action="/site/sort" method="post">
+      <th>
+        <form action="?sort" method="get">
           <input type="hidden" name="sort" value="email">
           <button type="submit" title="Sort by Email">
             Email
           </button>
         </form>
       </th>
-      <th><form action="/site/sort" method="post">
+      <th>
+        <form action="?sort" method="get">
           <input type="hidden" name="sort" value="text">
           <button type="submit" title="Sort by Text">
             Text
           </button>
         </form>
       </th>
-      <th><form action="/site/sort" method="post">
+      <th>
+        <form action="?sort" method="get">
           <input type="hidden" name="sort" value="status">
           <button type="submit" title="Sort by Status">
             Status
